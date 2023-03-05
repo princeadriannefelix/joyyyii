@@ -615,7 +615,7 @@ body {
 .verifybox {
   display: block;
   display: inline-block;
-  transform: translateY(40%);
+  transform: translateY(-10%);
 }
 
 .verifybox h1 {
