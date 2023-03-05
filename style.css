@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  overflow: scroll;
+  overflow-y: scroll;
   transition: all 0.5s ease;
   background-color: #1b1b1b;
   color: #ffff;
@@ -630,6 +630,10 @@ body {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+#sectionlast {
+  height: 400px;
 }
 
 .convo {
