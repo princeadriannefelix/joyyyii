@@ -24,50 +24,51 @@ const choiceD = document.getElementById("D");
 let questions = [
     {
         question: "Ilang taon tayo mag kaklase?",
-        choiceA: "A) 6",
-        choiceB: "B) 3",
-        choiceC: "C) 1",
-        choiceD: "D) 4",
+        choiceA: "6",
+        choiceB: "3",
+        choiceC: "1",
+        choiceD: "4",
         correct: "A"
 
     },
     {
         question: "Bukod kay chi-chi, brunie, at totee, sino pa ang aso mo?",
-        choiceA: "A) chuchi",
-        choiceB: "B) chuchay",
-        choiceC: "C) chuchu",
-        choiceD: "D) chichu",
+        choiceA: "chuchi",
+        choiceB: "chuchay",
+        choiceC: "chuchu",
+        choiceD: "chichu",
         correct: "C"
 
     },
     {
         question: "Saan tayo unang lumabas? Yung akala natin masarap ahhhahahhahah",
-        choiceA: "A) Tokyo",
-        choiceB: "B) Samgyyy",
-        choiceC: "C) Toyo",
-        choiceD: "D) Kyoto",
+        choiceA: "Tokyo",
+        choiceB: "Samgyyy",
+        choiceC: "Toyo",
+        choiceD: "Kyoto",
         correct: "D"
 
     },
     {
         question: "Ano pangalan ng ibon ko?",
-        choiceA: "A) Gon",
-        choiceB: "B) Chippy",
-        choiceC: "C) Killua",
-        choiceD: "D) Netsuko",
+        choiceA: "Gon",
+        choiceB: "Chippy",
+        choiceC: "Killua",
+        choiceD: "Netsuko",
         correct: "A"
 
     },
     {
         question: "Bukod sa tulog, saan kapa busog madalas?",
-        choiceA: "A) Chismisss",
-        choiceB: "B) Pagmamahal ko 😗",
-        choiceC: "C) Pagkainnn",
-        choiceD: "D) All are correct!",
+        choiceA: "Chismisss",
+        choiceB: "Pagmamahal ko 😗",
+        choiceC: "Pagkainnn",
+        choiceD: "All are correct!",
         correct: "D"
 
     },
 ];
+
 
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
