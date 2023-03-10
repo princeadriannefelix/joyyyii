@@ -160,9 +160,17 @@ document.getElementById('codeEntered')
             verifyCode()
         }
     })
-document.getElementById('codeEntered').onkeyup = function (event) {
+document.getElementById('codeEntered').onkeyup = async function (event) {
     if (this.value.length < 4) {
         document.querySelector('.codeField').classList.remove("wrong");
+    } if (this.value === "0225") {
+        document.querySelector('.verificationcontainer').classList.add("hidden");
+        document.querySelector('.lds-heart').classList.remove("hidden");
+        await sleep(5000);
+        document.querySelector('.lds-heart').classList.add("hidden");
+        document.querySelector('#ar').classList.remove("hidden");
+        document.querySelector('.body').classList.remove("hidden");
+        document.querySelector('.main').classList.remove("hidden");
     }
 }
 async function verifyCode() {
