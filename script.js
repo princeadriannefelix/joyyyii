@@ -11,6 +11,12 @@ function fadeUp() {
         } else {
             fade[i].classList.remove('active')
         }
+
+        if (top > height - 600) {
+            fade[i].classList.remove('past')
+        } else {
+            fade[i].classList.add('past')
+        }
     }
 
 }
@@ -61,7 +67,7 @@ let questions = [
     {
         question: "Bukod sa tulog, saan kapa busog madalas?",
         choiceA: "Chismisss",
-        choiceB: "Tulog😗",
+        choiceB: "Sa pagmamahal😗",
         choiceC: "Pagkainnn",
         choiceD: "All are correct!",
         correct: "D"
@@ -123,6 +129,7 @@ async function checkAnswer(answer) {
             await sleep(2000);
             document.querySelector('.upperbox').classList.add("hidden");
             document.querySelector('.verificationcontainer').classList.remove("hidden");
+            document.getElementById("codeEntered").focus();
             verifyCode();
         }
     } else {
@@ -163,14 +170,22 @@ document.getElementById('codeEntered')
 document.getElementById('codeEntered').onkeyup = async function (event) {
     if (this.value.length < 4) {
         document.querySelector('.codeField').classList.remove("wrong");
-    } if (this.value === "0225") {
+    }
+
+    if (this.value === "0225") {
         document.querySelector('.verificationcontainer').classList.add("hidden");
+        await sleep(500);
         document.querySelector('.lds-heart').classList.remove("hidden");
         await sleep(5000);
         document.querySelector('.lds-heart').classList.add("hidden");
-        document.querySelector('#ar').classList.remove("hidden");
+        await sleep(500);
+        document.querySelector('#arrowbtn').classList.remove("hidden");
         document.querySelector('.body').classList.remove("hidden");
         document.querySelector('.main').classList.remove("hidden");
+    }
+
+    if (this.value.length === 4 && this.value != "0225") {
+        document.querySelector('.codeField').classList.add("wrong");
     }
 }
 async function verifyCode() {
@@ -182,6 +197,7 @@ async function verifyCode() {
     if (code !== "") {
         if (code === "0225") {
             document.querySelector('.verificationcontainer').classList.add("hidden");
+            await sleep(1000);
             document.querySelector('.lds-heart').classList.remove("hidden");
             await sleep(5000);
             document.querySelector('.lds-heart').classList.add("hidden");

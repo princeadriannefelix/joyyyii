@@ -667,6 +667,11 @@ body {
   opacity: 1;
 }
 
+.fade.past {
+  opacity: 0;
+  transition: all 2s ease;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -754,22 +759,30 @@ body {
 }
 
 .upperbox {
+  opacity: 1;
   visibility: visible;
   transition: 500ms ease-in linear;
+  transition: all 500ms ease;
 }
 
 .upperbox.hidden {
+  opacity: 0;
   visibility: hidden;
-  transition: 500ms ease-in linear;
+  transition: all 500ms ease;
 }
 
 .verificationcontainer.hidden {
+  opacity: 0;
   visibility: hidden;
+  transition: all 500ms ease;
 }
 .verificationcontainer {
+  opacity: 1;
+  visibility: visible;
   position: relative;
   display: flex;
   display: inline-flex;
+  transition: all 500ms ease;
 }
 
 .question.code {
@@ -794,8 +807,10 @@ body {
 
 .codeField.wrong {
   background-color: #ff0000;
+  transition: background-color 200ms linear;
 }
 .codeField.wrong ~ label {
+  transition: background-color 200ms linear;
   color: #fff;
 }
 
@@ -830,17 +845,20 @@ input::-webkit-inner-spin-button {
   transform: translate(-50%, -50px);
 }
 .arrow {
+  opacity: 1;
   visibility: visible;
-  transition: 500ms ease-in linear;
+  transition: all 500ms ease;
 }
 
 .arrow.hidden {
+  opacity: 0;
   visibility: hidden;
-  transition: 500ms ease-in linear;
+  transition: all 500ms ease;
 }
 
 .lds-heart.hidden {
   visibility: hidden;
+  transition: visibility 500ms linear;
 }
 
 .lds-heart {
