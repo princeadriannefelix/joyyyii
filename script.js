@@ -61,7 +61,7 @@ let questions = [
     {
         question: "Bukod sa tulog, saan kapa busog madalas?",
         choiceA: "Chismisss",
-        choiceB: "Pagmamahal ko 😗",
+        choiceB: "Tulog😗",
         choiceC: "Pagkainnn",
         choiceD: "All are correct!",
         correct: "D"
@@ -106,6 +106,8 @@ function renderQuestion() {
     choiceD.innerHTML = q.choiceD;
 }
 
+
+
 function initiateQuiz() {
     renderQuestion();
 }
@@ -120,9 +122,8 @@ async function checkAnswer(answer) {
         } else {
             await sleep(2000);
             document.querySelector('.upperbox').classList.add("hidden");
-            document.querySelector('#ar').classList.remove("hidden");
-            document.querySelector('.body').classList.remove("hidden");
-            document.querySelector('.main').classList.remove("hidden");
+            document.querySelector('.verificationcontainer').classList.remove("hidden");
+            verifyCode();
         }
     } else {
         answerIsWrong();
@@ -143,6 +144,48 @@ async function answerIsWrong() {
     document.getElementById(letter).style.backgroundColor = "#f00";
     await sleep(500);
     document.getElementById(letter).style.backgroundColor = "#fff";
+}
+
+
+
+document.getElementById('code-form')
+    .addEventListener('submit', async function (ev) {
+        ev.preventDefault()
+        verifyCode()
+    })
+document.getElementById('codeEntered')
+    .addEventListener('keyup', function (ev) {
+        ev.preventDefault()
+        if (ev.key == 13) {
+            verifyCode()
+        }
+    })
+document.getElementById('codeEntered').onkeyup = function (event) {
+    if (this.value.length < 4) {
+        document.querySelector('.codeField').classList.remove("wrong");
+    }
+}
+async function verifyCode() {
+    document.getElementById("codeEntered").focus();
+    var code = document.querySelector(".codeField").value
+    if (code.length < 4) {
+        document.querySelector('.codeField').classList.remove("wrong");
+    }
+    if (code !== "") {
+        if (code === "0225") {
+            document.querySelector('.verificationcontainer').classList.add("hidden");
+            document.querySelector('.lds-heart').classList.remove("hidden");
+            await sleep(5000);
+            document.querySelector('.lds-heart').classList.add("hidden");
+            document.querySelector('#ar').classList.remove("hidden");
+            document.querySelector('.body').classList.remove("hidden");
+            document.querySelector('.main').classList.remove("hidden");
+        } else {
+            document.querySelector('.codeField').classList.add("wrong");
+        }
+
+    }
+
 }
 
 document.addEventListener('DOMContentLoaded', initiateQuiz())
