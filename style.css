@@ -755,12 +755,12 @@ body {
 
 .upperbox {
   visibility: visible;
-  animation: 500ms ease-in linear;
+  transition: 500ms ease-in linear;
 }
 
 .upperbox.hidden {
   visibility: hidden;
-  animation: 500ms ease-in linear;
+  transition: 500ms ease-in linear;
 }
 
 .verificationcontainer.hidden {
@@ -831,12 +831,12 @@ input::-webkit-inner-spin-button {
 }
 .arrow {
   visibility: visible;
-  animation: 500ms ease-in linear;
+  transition: 500ms ease-in linear;
 }
 
 .arrow.hidden {
   visibility: hidden;
-  animation: 500ms ease-in linear;
+  transition: 500ms ease-in linear;
 }
 
 .lds-heart.hidden {
