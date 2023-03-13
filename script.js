@@ -1,4 +1,7 @@
 
+let isTimer = true
+
+
 function fadeUp() {
     var fade = document.querySelectorAll('.fade')
     for (var i = 0; i < fade.length; i++) {
@@ -18,6 +21,13 @@ function fadeUp() {
             fade[i].classList.add('past')
         }
     }
+
+    if (top <= 61000 && top >= 60950) {
+        timer()
+        isTimer = false;
+    }
+
+    // console.log(top)
 
 }
 
@@ -210,6 +220,33 @@ async function verifyCode() {
 
     }
 
+
+}
+
+async function timer() {
+    let count = document.querySelector('.counter')
+    let time = 0
+
+    if (isTimer) {
+        document.querySelector('.body').classList.add("hidden");
+        let timeInterval = setInterval(() => {
+            if (time >= 20) {
+
+
+                clearInterval(timeInterval)
+
+            }
+            count.innerHTML = `Hintayy ka muna dito saglit <br />${20 - time}`
+            time++
+            if (time === 21) {
+                document.querySelector('.counter').innerHTML = `Halikaa taraaa`
+                document.querySelector('.body').classList.remove("hidden");
+            }
+        }, 1000)
+
+
+    }
+    isTimer = false
 }
 
 document.addEventListener('DOMContentLoaded', initiateQuiz())
