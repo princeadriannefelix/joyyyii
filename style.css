@@ -720,6 +720,7 @@ body {
   display: block;
   display: inline-block;
   padding: 25px;
+  animation: boxshadow 10s ease-in-out infinite;
 }
 
 .question {
@@ -896,6 +897,28 @@ input::-webkit-inner-spin-button {
   top: -24px;
   border-radius: 50% 50% 0 0;
 }
+
+@keyframes boxshadow {
+  0% {
+    box-shadow: 0 0 50px 15px #48abe0;
+  }
+  5% {
+    box-shadow: 0 0 50px 15px #fff;
+  }
+  39% {
+    box-shadow: 0 0 50px 15px #48abe0;
+  }
+  45% {
+    box-shadow: 0 0 50px 15px #fff;
+  }
+  60% {
+    box-shadow: 0 0 50px 15px #48abe0;
+  }
+  100% {
+    box-shadow: 0 0 50px 15px #fff;
+  }
+}
+
 @keyframes lds-heart {
   0% {
     transform: scale(0.95);

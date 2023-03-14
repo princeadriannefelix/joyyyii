@@ -137,6 +137,7 @@ async function checkAnswer(answer) {
             renderQuestion();
         } else {
             await sleep(2000);
+            document.querySelector(".verifytitle").innerHTML = "Osige ikaww ngaa yata hahahhahahhahahha"
             document.querySelector('.upperbox').classList.add("hidden");
             document.querySelector('.verificationcontainer').classList.remove("hidden");
             document.getElementById("codeEntered").focus();
@@ -178,11 +179,11 @@ document.getElementById('codeEntered')
         }
     })
 document.getElementById('codeEntered').onkeyup = async function (event) {
-    if (this.value.length < 4) {
+    if (this.value.length < 6) {
         document.querySelector('.codeField').classList.remove("wrong");
     }
 
-    if (this.value === "0225") {
+    if (this.value === "022523") {
         document.querySelector('.verificationcontainer').classList.add("hidden");
         await sleep(500);
         document.querySelector('.lds-heart').classList.remove("hidden");
@@ -194,7 +195,7 @@ document.getElementById('codeEntered').onkeyup = async function (event) {
         document.querySelector('.main').classList.remove("hidden");
     }
 
-    if (this.value.length === 4 && this.value != "0225") {
+    if (this.value.length === 6 && this.value != "022523") {
         document.querySelector('.codeField').classList.add("wrong");
     }
 }
@@ -205,7 +206,7 @@ async function verifyCode() {
         document.querySelector('.codeField').classList.remove("wrong");
     }
     if (code !== "") {
-        if (code === "0225") {
+        if (code === "022523") {
             document.querySelector('.verificationcontainer').classList.add("hidden");
             await sleep(1000);
             document.querySelector('.lds-heart').classList.remove("hidden");
@@ -252,3 +253,6 @@ async function timer() {
 document.addEventListener('DOMContentLoaded', initiateQuiz())
 
 window.addEventListener('scroll', fadeUp);
+
+
+
